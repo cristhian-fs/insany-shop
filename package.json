@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@ariakit/react": "^0.4.18",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
