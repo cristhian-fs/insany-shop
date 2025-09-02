@@ -1,3 +1,6 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import { ChevronLeftIcon } from "@/app/assets/icons/chevron-left";
 import { ChevronRightIcon } from "@/app/assets/icons/chevron-right";
 import type { TPagination } from "@/app/types/api";
@@ -15,10 +18,18 @@ export const Pagination = ({
   hasPreviousPage,
   totalPages,
 }: PaginationProps) => {
+  const searchParams = useSearchParams();
+
+  const createPageUrl = (page: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("page", page.toString());
+    return `?${params.toString()}`;
+  };
+
   return (
     <PaginationContainer>
       <PaginationLink
-        href={`?page=${currentPage - 1}`}
+        href={createPageUrl(currentPage - 1)}
         aria-disabled={!hasPreviousPage}
       >
         <ChevronLeftIcon title="Pagina anterior" />
@@ -29,14 +40,14 @@ export const Pagination = ({
             // biome-ignore lint/suspicious/noArrayIndexKey: Cannot find a better approach
             key={index + 1}
             aria-current={index + 1 === currentPage}
-            href={`?page=${index + 1}`}
+            href={createPageUrl(index + 1)}
           >
             {index + 1}
           </PaginationLink>
         ))}
       </PaginationNav>
       <PaginationLink
-        href={`?page=${currentPage + 1}`}
+        href={createPageUrl(currentPage + 1)}
         aria-disabled={!hasNextPage}
       >
         <ChevronRightIcon title="Proxima pagina" />
