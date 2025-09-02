@@ -51,6 +51,18 @@ export const ShoppingBagButton = styled(Ariakit.Button)`
     min-height: 44px;
     min-width: 44px;
     z-index: 9999;
+    border-radius: 0.5rem;
+  }
+  
+  &:hover::before{
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  &:focus::before{
+    background: rgba(0, 0, 0, 0.05);
+  }
+  &:focus-visible::before{  
+    background: rgba(0, 0, 0, 0.05);
   }
 
   span {
