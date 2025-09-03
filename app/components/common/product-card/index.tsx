@@ -7,6 +7,7 @@ import {
   ProductCardContainer,
   ProductCardDescription,
   ProductCardImage,
+  ProductCardLink,
   ProductCardTitle,
   ProductCategory,
   ProductCategoryContainer,
@@ -38,14 +39,18 @@ export const ProductCard = ({ onAddToCart, product }: ProductCardProps) => {
       </ProductImageContainer>
       <ProductInfo>
         <ProductCategoryContainer>
-          <ProductCategory>{product.category}</ProductCategory>
+          <ProductCardLink href={`/categoria/${product.category}`}>
+            <ProductCategory>{product.category}</ProductCategory>
+          </ProductCardLink>
           <ProductStars>
             <StarIcon title="Icone de estrela" />
             <span>{product.rating}</span>
           </ProductStars>
         </ProductCategoryContainer>
         <div>
-          <ProductCardTitle>{product.name}</ProductCardTitle>
+          <ProductCardLink href={`/produto/${product.id}`}>
+            <ProductCardTitle>{product.name}</ProductCardTitle>
+          </ProductCardLink>
           <ProductCardDescription>{product.description}</ProductCardDescription>
         </div>
         <ProductPriceContainer>

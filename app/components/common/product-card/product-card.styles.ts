@@ -1,7 +1,9 @@
 "use client";
 import * as Ariakit from "@ariakit/react";
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
+import { StyledButton } from "../../ui/button/button.styles";
 
 export const ProductCardContainer = styled.article`
   background-color: #fff;
@@ -66,6 +68,14 @@ export const ProductStars = styled.div`
   }
 `;
 
+export const ProductCardLink = styled(Link)`
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export const ProductCardTitle = styled.h3`
   font-size: 0.875rem;
   font-weight: 700;
@@ -109,45 +119,8 @@ export const ProductInStock = styled.p`
   line-height: 1.5;
 `;
 
-export const ProductCardButton = styled(Ariakit.Button)`
-  --border: rgb(0 0 0/0%);
-  display: flex;
-  height: 2.5rem;
-  user-select: none;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
+export const ProductCardButton = styled(StyledButton)`
+  margin-top: 1rem;
   gap: 1rem;
-  white-space: nowrap;
-  border-radius: 0.5rem;
-  border-style: none;
-  background-color: ${({ theme }) => theme.colors.foreground};
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: ${({ theme }) => theme.colors.background};
-  text-decoration-line: none;
   width: 100%;
-  box-shadow:
-    inset 0 0 0 1px var(--border);
-
-  &:not(:active):hover {
-    --border: rgb(255 255 255/33%);
-  }
-  &[aria-disabled="true"] {
-    opacity: 0.5;
-  }
-
-  &[data-focus-visible] {
-    outline-style: solid;
-  }
-
-  &:active,
-  &[data-active] {
-    padding-top: 0.125rem;
-    box-shadow:
-      inset 0 0 0 1px var(--border),
-      inset 0 2px 0 var(--border);
-  }
 `;

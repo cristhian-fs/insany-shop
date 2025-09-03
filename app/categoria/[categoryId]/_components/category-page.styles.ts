@@ -30,7 +30,7 @@ export const CategoryContentTitle = styled.h1`
 
 export const CategoryContentDescription = styled.h1`
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   color: ${({ theme }) => theme.colors.foreground};
   line-height: 1.5;
 
