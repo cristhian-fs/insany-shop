@@ -25,6 +25,10 @@ export type ProductsResponse = {
   pagination: TPagination;
 };
 
+export type TProductResponse = {
+  product: Product;
+};
+
 export type TCategory = {
   id: string;
   name: string;
