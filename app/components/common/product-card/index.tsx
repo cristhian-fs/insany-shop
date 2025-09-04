@@ -1,5 +1,6 @@
 import { CartIcon } from "@/app/assets/icons/cart";
 import { StarIcon } from "@/app/assets/icons/star";
+import { useCart } from "@/app/hooks/use-cart";
 import type { Product } from "@/app/types/api";
 import { toPrice } from "@/app/utils/formatters";
 import {
@@ -21,10 +22,11 @@ import {
 
 interface ProductCardProps {
   product: Product;
-  onAddToCart: (product: Product) => void;
 }
 
-export const ProductCard = ({ onAddToCart, product }: ProductCardProps) => {
+export const ProductCard = ({ product }: ProductCardProps) => {
+  const { addProduct } = useCart();
+
   return (
     <ProductCardContainer aria-labelledby={product.name}>
       <ProductImageContainer>
@@ -57,7 +59,7 @@ export const ProductCard = ({ onAddToCart, product }: ProductCardProps) => {
           <ProductPrice>{toPrice(product.price)}</ProductPrice>
           <ProductInStock>{product.stock} em estoque</ProductInStock>
         </ProductPriceContainer>
-        <ProductCardButton onClick={() => onAddToCart(product)}>
+        <ProductCardButton onClick={() => addProduct(product)}>
           <CartIcon title="Icone de adicionar ao carrinho" />
           Adicionar
         </ProductCardButton>

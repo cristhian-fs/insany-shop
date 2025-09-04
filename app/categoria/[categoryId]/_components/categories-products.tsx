@@ -80,11 +80,7 @@ export const CategoryProducts = ({
         </CategoryContentTitleWrapper>
         <ProductsContentGrid>
           {sortedProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onAddToCart={() => {}}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </ProductsContentGrid>
       </ProductsContent>

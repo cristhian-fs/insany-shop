@@ -72,11 +72,7 @@ export const HomeProducts = ({ categories, products }: HomeProductsProps) => {
         <ProductsContentTitle>Todos os produtos</ProductsContentTitle>
         <ProductsContentGrid>
           {sortedProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onAddToCart={() => {}}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </ProductsContentGrid>
       </ProductsContent>
