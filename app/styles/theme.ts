@@ -12,6 +12,7 @@ export const theme = {
     "header-search-foreground": "#737380",
     "bag-button-span-background": "#DE3838",
     "bag-button-span-foreground": "#ffffff",
+    "focus-visible-outline": "#3b82f6",
   },
   breakpoints,
 } as const;

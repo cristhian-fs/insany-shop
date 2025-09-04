@@ -21,6 +21,12 @@ export const CategoryCardContainer = styled(Link)`
   &:hover{
     background-color: #E0E0E0;
   }
+
+  &:focus,
+  &:focus-visible{
+    outline: 2px solid ${({ theme }) => theme.colors["focus-visible-outline"]};
+    outline-offset: 2px;
+  }
 `;
 
 export const CategoryTitle = styled.h2`

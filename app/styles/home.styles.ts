@@ -7,11 +7,12 @@ export const HomeContainer = styled.main`
   max-width: calc(70rem + 2rem);
   margin: 0 auto;
   padding-block: 2rem;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-top: 2rem;
     padding-bottom: 10.5rem;
+    padding-inline: 2rem;
   }
 `;
 
@@ -59,10 +60,10 @@ export const ProductsContentGrid = styled.div`
   grid-template-columns: 1fr;
   gap: calc(1.5rem + 2px);
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.smallTablet}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 `;
