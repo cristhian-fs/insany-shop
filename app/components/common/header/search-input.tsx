@@ -1,6 +1,7 @@
 "use client";
 import * as Ariakit from "@ariakit/react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { SearchLoupeIcon } from "@/app/assets/icons/search-loupe";
 import { FormWrapper, Input, InputWrapper } from "./search-input.styles";
 
@@ -33,6 +34,14 @@ const SearchInput = () => {
         <SearchLoupeIcon title="Icone de pesquisa" />
       </InputWrapper>
     </FormWrapper>
+  );
+};
+
+export const SearchBar = () => {
+  return (
+    <Suspense>
+      <SearchInput />
+    </Suspense>
   );
 };
 

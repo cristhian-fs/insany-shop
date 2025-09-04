@@ -17,7 +17,7 @@ import {
   HeaderMobileMenuInputWrapper,
   ShoppingBagButtonLink,
 } from "./header.styles";
-import SearchInput from "./search-input";
+import { SearchBar } from "./search-input";
 
 const Header = () => {
   const { cart } = useCart();
@@ -57,7 +57,7 @@ const Header = () => {
           <VisuallyHidden>Abrir menu</VisuallyHidden>
         </HeaderMenuButton>
         <HeaderContentInputWrapper>
-          <SearchInput />
+          <SearchBar />
           <ShoppingBagButtonLink href="/carrinho">
             <ShoppingBagIcon title="Carrinho" />
             <VisuallyHidden>Carrinho</VisuallyHidden>
@@ -84,7 +84,7 @@ const Header = () => {
           </HeaderMobileMenuCloseButton>
           <HeaderLogo>InsanyShop</HeaderLogo>
           <HeaderMobileMenuInputWrapper>
-            <SearchInput />
+            <SearchBar />
             <ShoppingBagButtonLink href="/carrinho">
               <ShoppingBagIcon title="Carrinho" />
               <VisuallyHidden>Carrinho</VisuallyHidden>
