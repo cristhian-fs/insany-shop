@@ -37,8 +37,11 @@ export const PaginationLink = styled(Link)`
   cursor: pointer;
   outline: 1px solid transparent;
 
+  transition: transform 0.2s, background 0.2s;
+  transition-timing-function: cubic-bezier(.5,.05,.26,.94);
+
   &:not(:active):hover {
-    --border: rgb(255 255 255/33%);
+    background: #fff;
   }
   &[aria-disabled="true"] {
     opacity: 0.5;
@@ -50,5 +53,15 @@ export const PaginationLink = styled(Link)`
     outline-color: #A212DF;
     color: #A212DF;
     font-weight: 600;
+  }
+
+  &:focus,
+  &:focus-visible{
+    outline: 2px solid ${({ theme }) => theme.colors["focus-visible-outline"]};
+    outline-offset: 2px;
+  }
+
+  &:active{
+    transform: scale(0.95);
   }
 `;

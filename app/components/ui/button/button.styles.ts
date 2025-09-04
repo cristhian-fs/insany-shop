@@ -15,7 +15,7 @@ export const variantStyles: Record<Variant, ReturnType<typeof css>> = {
 
     &:focus,
     &:focus-visible{
-      outline: 2px solid #3b82f6;
+      outline: 2px solid ${({ theme }) => theme.colors["focus-visible-outline"]};
       outline-offset: 2px;
     }
   `,
@@ -67,7 +67,11 @@ export const StyledButton = styled(Ariakit.Button)<{
   font-weight: 500;
   line-height: 1.5rem;
   text-decoration-line: none;
-  transition: background 0.2s, color 0.2s;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+  transition-timing-function: cubic-bezier(.5,.05,.26,.94);
+  &:active{
+    transform: scale(0.97);
+  }
 
   &[aria-disabled="true"] {
     opacity: 0.5;

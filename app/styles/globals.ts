@@ -1,11 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
 
   body {
     color: ${(props) => props.theme.colors.foreground};
@@ -13,6 +8,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+
+    &:has(header div[data-state="open"]){
+      overflow: hidden;
+      pointer-events: none;
+    }
   }
 
   * {
