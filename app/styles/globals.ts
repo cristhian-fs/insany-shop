@@ -125,6 +125,7 @@ export const GlobalStyle = createGlobalStyle`
   [type="reset"],
   [type="submit"] {
     -webkit-appearance: button;
+    appearance: button;
     background: transparent;
     outline: none;
     border: none;
@@ -182,6 +183,7 @@ export const GlobalStyle = createGlobalStyle`
 
   [type="search"] {
     -webkit-appearance: textfield; 
+    appearance: textfield; 
     outline-offset: -2px; 
   }
 

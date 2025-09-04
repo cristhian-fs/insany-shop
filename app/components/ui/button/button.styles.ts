@@ -12,6 +12,12 @@ export const variantStyles: Record<Variant, ReturnType<typeof css>> = {
     &:hover {
       background: #111827;
     }
+
+    &:focus,
+    &:focus-visible{
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+    }
   `,
   purchase: css`
     background: #1b9847;
