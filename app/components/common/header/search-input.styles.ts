@@ -30,6 +30,14 @@ export const InputWrapper = styled.div`
   &:has(input:focus) {
     outline: 2px solid ${(props) => props.theme.colors["header-search-foreground"]};
   }
+
+  
+  &:has(input[aria-invalid="true"]) input::placeholder {
+    color: #ef4444;
+  }
+  &:has(input[aria-invalid="true"]){
+    outline: 2px solid #ef4444;
+  }
 `;
 
 export const Input = styled(Ariakit.FormInput)`
