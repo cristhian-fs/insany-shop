@@ -121,18 +121,6 @@ export const GlobalStyle = createGlobalStyle`
     text-transform: none;
   }
 
-  button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
-    -webkit-appearance: button;
-    appearance: button;
-    background: transparent;
-    outline: none;
-    border: none;
-    border-radius: 0;
-  }
-
   button::-moz-focus-inner,
   [type="button"]::-moz-focus-inner,
   [type="reset"]::-moz-focus-inner,
