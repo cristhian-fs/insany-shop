@@ -42,13 +42,13 @@ export default async function Home({
   if (searchTerm) query.set("search", searchTerm);
   if (category) query.set("category", category);
 
-  const fetchUrl = `${process.env.NEXT_PUBLIC_API_URL}/products?${query.toString()}`;
+  const fetchUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/products?${query.toString()}`;
 
   const productsResponse = await fetch(fetchUrl);
   const productsData = (await productsResponse.json()) as ProductsResponse;
 
   const categoriesResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/categories`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/categories`,
   );
   const categoriesData =
     (await categoriesResponse.json()) as TCategoriesResponse;

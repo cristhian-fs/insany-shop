@@ -34,7 +34,7 @@ export async function generateMetadata(
 
   // fetch data
   const { product } = (await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/products/${productId}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products/${productId}`,
   ).then((res) => res.json())) as TProductResponse;
 
   // optionally access and extend (rather than replace) parent metadata
@@ -51,11 +51,11 @@ export async function generateMetadata(
 export default async function Page({ params }: Props) {
   const { productId } = await params;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/products/${productId}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products/${productId}`,
   );
 
   const categoriesRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/categories`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/categories`,
   );
 
   const categories = (await categoriesRes.json()) as TCategoriesResponse;

@@ -13,7 +13,7 @@ export default async function Page({ params, searchParams }: Props) {
   const page = (await searchParams).page || 1;
   const limit = (await searchParams).limit || 10;
   const categorizedProductsResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/products?category=${categoryId}&page=${page}&limit=${limit}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products?category=${categoryId}&page=${page}&limit=${limit}`,
   );
 
   const productsData =
@@ -21,7 +21,7 @@ export default async function Page({ params, searchParams }: Props) {
 
   // Fetch cateogories to get the current correct category
   const categoriesData = (await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/categories`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/categories`,
   ).then((res) => res.json())) as TCategoriesResponse;
 
   const currentCategoryData = categoriesData.categories.find(
