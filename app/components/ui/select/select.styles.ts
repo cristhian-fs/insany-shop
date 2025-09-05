@@ -12,6 +12,9 @@ const StyledSelectTrigger = styled(Ariakit.Select)`
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
   color: ${({ theme }) => theme.colors["muted-foreground"]};
   cursor: pointer;
 
